@@ -7,13 +7,19 @@ use Illuminate\Http\Request;
 use function Ramsey\Uuid\v1;
 use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
 
-    public function index()
+    public function index(int $status)
     {
 
+        // Listando ativos ou inativos
+
+        $students = DB::table('students')->get()->where('user_id', auth()->user()->id)->where('is_active', $status);
+
+        return view('student.list', ['students' => $students])->with('status', $status);
     }
 
 
@@ -57,7 +63,6 @@ class StudentController extends Controller
     {
 
     }
-
     public function update()
     {
 

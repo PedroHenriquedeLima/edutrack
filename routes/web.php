@@ -32,7 +32,7 @@ Route::controller(StudentController::class)->group(function () {
 
     Route::post('/aluno/cadastrar', 'store')->name('student.store');
 
-    Route::get('/alunos/{status}/listar', 'index')->name('student.index');
+    Route::get('/alunos/{status}/listar', 'index')->name('student.filter');
 
     Route::get('/aluno/editar/{id}', 'edit')->name('student.edit');
 
