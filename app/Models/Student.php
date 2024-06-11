@@ -9,15 +9,16 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillabe = [
-        'name',
+    protected $fillable = [
+        
+        'student_name',
         'contact',
         'schedule_days',
         'schedule_time',
         'payment_date',
-        'user_id',
-        'created_at',
-        'updated_at',
+        'is_active',
+        'user_id'
+
     ];
 
     public function user()

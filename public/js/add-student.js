@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const name = document.getElementById('name').value;
+        const name = document.getElementById('student_name').value;
         const contact = document.getElementById('contact').value;
-        const schedule_days = document.getElementById('schedule_day').value;
+        const schedule_days = document.getElementById('schedule_days').value;
         const schedule_time = document.getElementById('schedule_time').value;
         const payment_date = document.getElementById('payment_date').value;
         

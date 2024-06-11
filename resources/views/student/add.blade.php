@@ -15,7 +15,7 @@
 
                     <div class="col-md-8">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <input type="text" class="form-control" name="student_name" id="student_name">
                     </div>
 
                     <div class="col-md-4">
@@ -27,8 +27,8 @@
                 <div class="row mb-3">
 
                     <div class="col-md-4">
-                        <label for="schedule_day" class="form-label">Agendamento(Dia)</label>
-                        <select name="schedule_day" id="schedule_day" class="form-select">
+                        <label for="schedule_days" class="form-label">Agendamento(Dia)</label>
+                        <select name="schedule_days" id="schedule_days" class="form-select">
                             <option value="">Selecione</option>
                             <option value="SEGUNDA">Segunda</option>
                             <option value="TERCA">Terça</option>
