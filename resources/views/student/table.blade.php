@@ -16,7 +16,7 @@
                 <td>{{ $student->student_name }}</td>
                 <td>{{ $student->contact }}</td>
                 <td>{{ $student->schedule_days . ' - ' . $student->schedule_time }}</td>
-                <td><a href="{{ route('student.edit', $student->id) }}">{{ $student->payment_date }}</a></td>
+                <td><a href="{{ route('student.payment', $student->id) }}">{{ $student->payment_date }}</a></td>
                 <td><a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary">Editar</td>
             </tr>
         @endforeach

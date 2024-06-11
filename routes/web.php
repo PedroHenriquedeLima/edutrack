@@ -36,7 +36,11 @@ Route::controller(StudentController::class)->group(function () {
 
     Route::get('/aluno/editar/{id}', 'edit')->name('student.edit');
 
-    Route::put('/aluno/editar/{id}', 'update')->name('student.update');
+    Route::put('/aluno/{id}/editar/', 'update')->name('student.update');
+
+    Route::get('/aluno/{id}/pagamento', 'payment')->name('student.payment');
+
+    Route::get('/aluno/{id}/pagamento/confirmar', 'updatePayment')->name('student.updatePayment');
 
     Route::delete('/aluno/excluir/{id}', 'destroy')->name('student.destroy');
 

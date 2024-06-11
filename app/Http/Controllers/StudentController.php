@@ -59,6 +59,54 @@ class StudentController extends Controller
     {
 
     }
+
+    public function payment(int $id)
+    {
+
+        $student = Student::find($id);
+
+        $today = date('Y-m-d');
+
+        if($today > $student->payment_date || $today == $student->payment_date) {
+
+            $status_payment = 0; // Pagamento em atraso
+
+        } else {
+
+            $status_payment = 1; // Pagamento em dia
+
+        }
+
+        return view('student.payment')->with('student', $student)->with('status_payment', $status_payment);
+
+
+    }
+
+    public function updatePayment(int $id)
+    {
+        
+        // Atualizando data de pagamento
+
+        $student = DB::table('students')->find($id);
+        if (!$student) {
+            return redirect()->route('home')->with('error', 'Estudante não encontrado!');
+        }
+    
+        try {
+            // Atualizando data de pagamento
+            $next_date = date('Y-m-d', strtotime('+1 month'));
+    
+            DB::table('students')
+                ->where('id', $id)
+                ->update(['payment_date' => $next_date]);   
+    
+            // Retornando para tela inicial com sucesso
+            return redirect()->route('home')->with('success', 'Pagamento concluído com sucesso!');
+        } catch (\Exception $e) {
+            // Tratamento de erro
+            return redirect()->route('home')->with('error', 'Erro ao atualizar pagamento!');
+        }
+    }
     public function edit()
     {
 
