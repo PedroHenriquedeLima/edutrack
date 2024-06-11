@@ -60,6 +60,7 @@ class StudentController extends Controller
 
     }
 
+
     public function payment(int $id)
     {
 
@@ -116,10 +117,39 @@ class StudentController extends Controller
 
     }
 
+    public function inactivate(int $id)
+    {
+        
+
+        $student = DB::table('students')->find($id);
+        if (!$student) {
+            return redirect()->route('home')->with('error', 'Estudante não encontrado!');
+        }
+    
+        try {
+            // Atualizando data de pagamento
+            $inactivate = 0;
+    
+            DB::table('students')
+                ->where('id', $id)
+                ->update(['is_active' => $inactivate]);   
+    
+            // Retornando para tela inicial com sucesso
+            return redirect()->route('home')->with('success', 'Estudante inativado com sucesso!');
+        } catch (\Exception $e) {
+            // Tratamento de erro
+            return redirect()->route('home')->with('error', 'Erro ao inativar estudante!');
+        }
+
+
+    }
+
+    
     public function destroy()
     {
 
     }
+
 
     
 }

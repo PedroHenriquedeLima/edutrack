@@ -42,6 +42,8 @@ Route::controller(StudentController::class)->group(function () {
 
     Route::get('/aluno/{id}/pagamento/confirmar', 'updatePayment')->name('student.updatePayment');
 
+    Route::get('/aluno/{id}/inativar', 'inactivate')->name('student.inactivate');
+    
     Route::delete('/aluno/excluir/{id}', 'destroy')->name('student.destroy');
 
     Route::get('/aluno/{id}/detalhes', 'show')->name('student.show');
