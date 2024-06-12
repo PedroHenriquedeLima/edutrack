@@ -15,7 +15,7 @@ EduTrack é um sistema de rastreamento de alunos, aulas e pagamentos, projetado 
 - **JavaScript:** Para interatividade do usuário no frontend.
 
 ## Instalação
-1. Clone este repositório: `git clone https://github.com/seu-usuario/edutrack.git`
+1. Clone este repositório: `git clone https://github.com/PedroHenriquedeLima/edutrack.git`
 2. Instale as dependências do Composer: `composer install`
 3. Copie o arquivo `.env.example` para `.env` e configure seu ambiente, incluindo as credenciais do banco de dados.
 4. Gere a chave de aplicativo Laravel: `php artisan key:generate`
