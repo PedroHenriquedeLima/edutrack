@@ -34,9 +34,9 @@ Route::controller(StudentController::class)->group(function () {
 
     Route::get('/alunos/{status}/listar', 'index')->name('student.filter');
 
-    Route::get('/aluno/editar/{id}', 'edit')->name('student.edit');
+    Route::get('/aluno/{id}/editar', 'edit')->name('student.edit');
 
-    Route::put('/aluno/{id}/editar/', 'update')->name('student.update');
+    Route::put('/aluno/{id}/editar/salvar', 'update')->name('student.update');
 
     Route::get('/aluno/{id}/pagamento', 'payment')->name('student.payment');
 

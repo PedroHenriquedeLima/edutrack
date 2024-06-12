@@ -108,13 +108,20 @@ class StudentController extends Controller
             return redirect()->route('home')->with('error', 'Erro ao atualizar pagamento!');
         }
     }
-    public function edit()
+    public function edit(int $id)
     {
+
+        $student = DB::table('students')->find($id);
+
+        return view('student.edit')->with('student', $student);
 
     }
-    public function update()
-    {
 
+    public function update(Request $request, $id)
+    {
+        $student = Student::findOrFail($id);
+        $student->update($request->all());
+        return redirect()->route('home')->with('success', 'Estudante atualizado com sucesso');
     }
 
     public function inactivate(int $id)
@@ -144,7 +151,7 @@ class StudentController extends Controller
 
     }
 
-    
+
     public function destroy()
     {
 
