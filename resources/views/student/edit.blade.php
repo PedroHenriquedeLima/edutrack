@@ -9,7 +9,7 @@
 
         
         <p class="h1 text-center mt-3">Editar Aluno</p>
-        <p class="text-center">Dê dois cliques nos campos  para editar</p>
+        <p class="text-center">Altere o campo ou campos que deseja e clique em Confirmar Alteração</p>
 
     <form action="{{route('student.update', $student->id)}}" method="POST" class="bg-body shadow border rounded p-4 mt-5" id="add-student-form">
         @csrf

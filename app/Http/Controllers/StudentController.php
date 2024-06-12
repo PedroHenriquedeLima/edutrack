@@ -152,8 +152,12 @@ class StudentController extends Controller
     }
 
 
-    public function destroy()
+    public function destroy(int $id)
     {
+
+        Student::destroy($id);
+
+        return redirect()->route('home')->with('success', 'Estudante excluído com sucesso!');
 
     }
 

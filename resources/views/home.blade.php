@@ -16,6 +16,7 @@
                 <p><a href="{{route('student.filter', 0)}}" class="link-secondary">Inativos: {{ $students->where('is_active', 0)->count() }}</a></p>
                
             </div>
+            
             <a href="{{ route('student.create') }}" class="btn btn-primary btn-block py-2 px-5">Cadastrar</a>
 
             

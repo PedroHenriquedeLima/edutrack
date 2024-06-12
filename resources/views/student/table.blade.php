@@ -17,7 +17,14 @@
                 <td>{{ $student->contact }}</td>
                 <td>{{ $student->schedule_days . ' - ' . $student->schedule_time }}</td>
                 <td><a href="{{ route('student.payment', $student->id) }}">{{ $student->payment_date }}</a></td>
-                <td><a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary">Editar</td>
+                <td>
+                    <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary mb-2">Editar</a> 
+                    <form action="{{ route('student.destroy', $student->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger mb-2" onclick="return confirm('Tem certeza que deseja excluir este estudante?')">Excluir</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </tbody>
