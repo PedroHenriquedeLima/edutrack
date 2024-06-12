@@ -46,6 +46,5 @@ Route::controller(StudentController::class)->group(function () {
     
     Route::delete('/aluno/excluir/{id}', 'destroy')->name('student.destroy');
 
-    Route::get('/aluno/{id}/detalhes', 'show')->name('student.show');
 
 });

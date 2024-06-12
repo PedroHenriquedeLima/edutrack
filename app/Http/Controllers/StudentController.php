@@ -55,11 +55,6 @@ class StudentController extends Controller
         return redirect()->route('home')->with('success', 'Aluno criado com sucesso!');
     }
 
-    public function show()
-    {
-
-    }
-
 
     public function payment(int $id)
     {
